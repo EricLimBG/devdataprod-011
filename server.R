@@ -20,7 +20,7 @@ shinyServer(function(input, output, session) {
     
     # Define Storm Type Control
     output$stormtypes <- renderUI({
-        checkboxGroupInput('evtypes','Storm Types', 
+        checkboxGroupInput('evtypes','Event Types', 
                            evtypes,selected=selections$evtypes)
     })
     
