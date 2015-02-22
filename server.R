@@ -64,13 +64,13 @@ shinyServer(function(input, output, session) {
                 else if(pCategory=='fatalities') {FATALITIES} 
                 else {PROPDMG+CROPDMG}
             })
+        
         #Print/Output Plot
         p <- ggplot(plotdata,aes(map_id=STATE))
         p <- p + geom_map(aes_string(fill="Impact"),map=states_map,colour='black')
         p <- p + expand_limits(x=states_map$long,y=states_map$lat)
         p <- p + coord_map() + theme_bw()
         p <- p + labs(x="Long",y="Lat",title=ptitle)
-        p + scale_fill_gradient(low="#fff5eb",high="#d94801")
         print(p)     
     })
     
